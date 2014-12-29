@@ -5,6 +5,10 @@ Addetto::Addetto(){
 	password="pass1";
 }
 
+void Addetto::inizializza_addetto(string _nome, string _cognome, string _nato_il, string _citta){
+	p.inizializza(_nome, _cognome, _nato_il, _citta);
+}
+
 bool Addetto::login(string _username, string _password){
 	return ((username==_username)&&(password==_password));
 }

@@ -13,11 +13,14 @@ class Addetto{
 		Persona p;
 		string username;
 		string password;
-		map<int,Cliente>map_cliente;
-		map<int,Ordine>map_ordine;
+		map<int,Cliente> map_cliente;
+		map<int,Ordine> map_ordine;		//da verificare map di map
 		
 	public:
 		Addetto();
+		//input
+		void inizializza_addetto(string _nome, string _cognome, string _nato_il, string _citta);
+		//output
 		bool login(string _username, string _password);
 		void inserisciCliente(Cliente c);
 		bool verificaMagazzino();

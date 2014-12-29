@@ -14,18 +14,17 @@ class Persona{
 		string citta;
 	public:
 		Persona();
+		void inizializza(string _nome, string _cognome, string _nato_il, string _citta);
 		void inserisciNome(string _nome);
-		void modificaNome(string _nome);
 		string get_nome();
 		void inserisciCognome(string _cognome);
-		void modificaCognome(string _cognome);
 		string get_cognome();
 		void inserisciData(string _data);			//array di int[8] da implementare
-		void modificaData(string _data);
 		string get_data();
+		void inserisciCitta(string _citta);			//array di int[8] da implementare
+		string get_citta();
 };
 
 void test_persona();
-
 
 #endif

@@ -10,11 +10,12 @@ class Cliente{
 		string mail;
 	public:
 		Cliente();
-		string cliente_nome();
-		string cliente_cognome();
-		string cliente_data();
+		//input
+		void inizializza_cliente(string _nome, string _cognome, string _nato_il, string _citta);
 		void inserisciIdCliente(int cliente_id);
 		void inserisciMail(string _mail);
+		//output
+		Persona get_p();
 		int get_id();
 		string get_mail();
 		void Ordine();	
