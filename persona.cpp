@@ -27,7 +27,7 @@ void Persona::modificaCognome(string _cognome){
 	cognome=_cognome;
 }
 
-//return cognome
+//return cognome -
 string Persona::get_cognome(){
 	return cognome;
 }
