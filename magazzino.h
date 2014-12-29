@@ -10,7 +10,6 @@ class Magazzino {
 	private:
 		int IDProdotto;
 		int quantitaDisponibile;
-		int i;
 	public:
 		Magazzino();
 		Magazzino(int _IDP, int qd);
