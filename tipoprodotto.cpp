@@ -1,4 +1,6 @@
 #include "tipoprodotto.h"
+#include <map>
+#include <string>
 
 		TipoProdotto::TipoProdotto() {
 			IDProdotto = " ";
@@ -10,15 +12,16 @@
 			nome = _nome;
 		}
 		
-		void TipoProdotto::get_idprodotto() {
+		string TipoProdotto::get_idprodotto() {
 			return IDProdotto;
 		}
 		
-		void TipoProdotto::get_nome() {
+		string TipoProdotto::get_nome() {
 			return nome;
 		}
 		
 		void TipoProdotto::inserisciProdotto() {
+			
 			cout << "Inserire ID prodotto : ";
 			cin >> IDProdotto;
 			cout << endl;

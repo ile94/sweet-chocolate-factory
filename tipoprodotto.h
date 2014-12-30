@@ -3,6 +3,8 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <map>
+
 using namespace std;
 
 class TipoProdotto {
@@ -14,8 +16,8 @@ class TipoProdotto {
 		//costruttore di default e specifico
 		TipoProdotto(string _IDProdotto, string _nome);
 		TipoProdotto();
-		void get_idprodotto();
-		void get_nome();
+		string get_idprodotto();
+		string get_nome();
 		void inserisciProdotto(); 
 };
 
