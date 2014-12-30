@@ -8,10 +8,10 @@ Materiale :: Materiale() {
 	m.insert(pair<int, string> (IDMateriale, string(" ")));
 }
 		
-Materiale::Materiale(int _IDM, string tm) {
+/*Materiale::Materiale(int _IDM, string tm) {
 	IDMateriale = _IDM;
 	tipoMateriale = tm;
-}
+}*/
 
 //ostream& operator<<(ostream& os, const Materiale&){
          //if ()}
