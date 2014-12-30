@@ -7,16 +7,18 @@ using namespace std;
 
 class TipoProdotto {
 	private:
-		int IDProdotto;
+		string IDProdotto;
 		string nome; //nome del prodotto
+		map <string, string> tp;
 	public:
 		//costruttore di default e specifico
-		TipoProdotto(int _IDProdotto, string _nome);
+		TipoProdotto(string _IDProdotto, string _nome);
 		TipoProdotto();
 		void get_idprodotto();
 		void get_nome();
 		void inserisciProdotto(); 
 };
 
+void test_prodotto();
 
 #endif
