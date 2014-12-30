@@ -1,8 +1,9 @@
-
 #ifndef __MAGAZZINO_H__
 #define __MAGAZZINO_H__
 #include <cstdlib>
 #include <iostream>
+
+
 using namespace std;
 
 

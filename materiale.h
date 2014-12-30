@@ -4,19 +4,19 @@
 #include <iostream>
 #include <string>
 #include <map>
+
 using namespace std;
 
 class Materiale {
 	private:
 		int IDMateriale;
 		string tipoMateriale;
-		map<int, string> m;
+		map<string, string> mp;
 		
 		
 	public:
 		Materiale();
-		Materiale(map<int, string>);
-		//Materiale(int _IDM, string tm);
+		Materiale(int _IDM, string tm);
 		void inserisciTipoMateriale();
 		
 		//friend ostream& operator<<(ostream& os, const Materiale&);
