@@ -22,6 +22,6 @@ class Materiale {
 		//friend ostream& operator<<(ostream& os, const Materiale&);
 };
 
-void test_Materiale();
+void test_materiale();
 
 #endif

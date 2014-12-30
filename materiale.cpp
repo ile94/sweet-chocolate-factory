@@ -17,8 +17,8 @@ Materiale::Materiale(int _IDM, string tm) {
 //ostream& operator<<(ostream& os, const Materiale&){
          //if ()}
 
-void test_Materiale(){
+void test_materiale(){
+     cout << "TEST MATERIALE" << endl;
      Materiale m;
-     //m.Materiale();
-     //cout<< m.IDMateriale << endl;
+    
 }
