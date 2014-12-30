@@ -2,6 +2,7 @@
 #include <map>
 #include <string>
 
+#include "tipoprodotto.h"
 
 Materiale :: Materiale() {
     map<int, string> m;
@@ -13,6 +14,12 @@ Materiale :: Materiale() {
 Materiale::Materiale(int _IDM, string tm) {
 	IDMateriale = _IDM;
 	tipoMateriale = tm;}
+	
+void Materiale:: inserisciTipoMateriale(){
+     //leggo il map del tipoprodotto
+     
+     }
+
 
 //ostream& operator<<(ostream& os, const Materiale&){
          //if ()}
@@ -20,5 +27,5 @@ Materiale::Materiale(int _IDM, string tm) {
 void test_materiale(){
      cout << "TEST MATERIALE" << endl;
      Materiale m;
-    
+     m.inserisciTipoMateriale();
 }
