@@ -30,3 +30,9 @@
 			cout << endl;
 			tp.insert (pair<string, string>(IDProdotto, nome));
 		}
+		
+		void test_prodotto() {
+			cout << "test prodotto " << endl;
+			TipoProdotto tp;
+			tp.inserisciProdotto();
+		}
