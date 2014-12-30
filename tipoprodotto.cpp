@@ -33,6 +33,15 @@
 		
 		void test_prodotto() {
 			cout << "test prodotto " << endl;
-			TipoProdotto tp;
-			tp.inserisciProdotto();
+			for (int i=0; i<5; i++) {
+				TipoProdotto tipoprod;
+				tipoprod.inserisciProdotto();
+			}
+			map <string, string>::iterator mii;
+			for (mii = tp.begin(); mii != tp.end(); mii++ ) {
+			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
+			}
+			
 		}
+		
+		

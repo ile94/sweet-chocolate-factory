@@ -18,7 +18,7 @@ class TipoProdotto {
 		TipoProdotto();
 		string get_idprodotto();
 		string get_nome();
-		void inserisciProdotto(); 
+		void inserisciProdotto();
 };
 
 void test_prodotto();
