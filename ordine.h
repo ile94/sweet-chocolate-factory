@@ -5,7 +5,13 @@
 using namespace std;
 
 class Ordine {
-	private:
+      private:
+              
+              
+      
+      public:
+             
+	/*private:
 		int IDRigaOrdine;
 		int IDOrdineVendita;
 	public:
@@ -14,7 +20,7 @@ class Ordine {
 		//costruttore specifico
 		Ordine(int _IDR, int _IDO);
 		//void inserisciRigaOrdine(); metodi da implementare
-		//void inserisciOrdineVendita();
+		//void inserisciOrdineVendita();*/
 };
 
 

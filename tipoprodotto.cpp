@@ -17,11 +17,11 @@
 		
 		string TipoProdotto:: get_idprodotto() {
 			return IDProdotto;
-		}
+        }
 		
 		string TipoProdotto:: get_nome() {
 			return nome;
-		}
+        }
 		
 	   TipoProdotto* TipoProdotto::inserisciProdotto() {
 			TipoProdotto* prodotto  = new TipoProdotto();

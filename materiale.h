@@ -9,17 +9,16 @@ using namespace std;
 
 class Materiale {
 	private:
-		int IDMateriale;
+		string IDMateriale;
 		string tipoMateriale;
 		map<string, string> mp;
 		
-		
 	public:
 		Materiale();
-		Materiale(int _IDM, string tm);
-		void inserisciTipoMateriale();
+		Materiale(string _IDM, string tm);
+		Materiale* inserisciTipoMateriale();
+		void stampa(Materiale* mat);
 		
-		//friend ostream& operator<<(ostream& os, const Materiale&);
 };
 
 void test_materiale();
