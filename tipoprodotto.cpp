@@ -30,10 +30,10 @@
 			cin >> nome;
 			cout << endl;
 			tp.insert ( pair <string, string> (IDProdotto, nome));
-			map <string, string >:: iterator mii;
+			/*map <string, string >:: iterator mii;
 			for (mii = tp.begin(); mii != tp.end(); mii++ ) {
 			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
-			}
+			}*/
 		}
 		
 		void TipoProdotto::stampa() {
@@ -47,11 +47,9 @@
 			cout << "test prodotto " << endl;
 			TipoProdotto tipoprod;
 			for (int i=0; i<5; i++) {
-				
 				tipoprod.inserisciProdotto();
-				//tipoprod.get_prodotto();
-			}
-		//tipoprod.get_prodotto();
+            }
+            tipoprod.stampa();
 			
 		}
 		
