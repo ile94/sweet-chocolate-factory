@@ -1,6 +1,7 @@
 #include "tipoprodotto.h"
 #include <map>
 #include <string>
+#include <fstream>
 
 
 		TipoProdotto::TipoProdotto() {
@@ -21,32 +22,37 @@
 			return nome;
 		}
 		
-		void TipoProdotto::inserisciProdotto() {
+	   TipoProdotto* TipoProdotto::inserisciProdotto() {
 			TipoProdotto* prodotto  = new TipoProdotto();
+			string temp1, temp2; //si crea temporaneamente le variabili IDProdotto e Nome
+			                     //queste variabili vengono distrutte subito
 			cout << "Inserire ID prodotto : ";
-			cin >> prodotto->IDProdotto;
+			cin >> temp1;
 			cout << endl;
 			cout << "Inserire nome prodotto : ";
-			cin >> prodotto->nome;
+			cin >> temp2;
 			cout << endl;
-			tp.insert ( pair <string, string> (prodotto->IDProdotto, prodotto->nome));	
+			prodotto->tp.insert ( pair <string, string> (temp1, temp2));
+            return prodotto; //ritorna un puntatore ad un Tipoprodotto	
+            
+            /*ofstream output_file ("prova.txt");
+            outfile.open("prova.txt",ios::out);
+            outfile << temp1<< temp2 <<endl;
+            outfile.close();*/
 		}
 		
-		void TipoProdotto::stampa() {
+		void TipoProdotto::stampa(TipoProdotto* prodotto) {
 			map <string, string >:: iterator mii;
-			cout << "ciao" << endl;
-			/*for (mii = tp.begin(); mii != tp.end(); mii++ ) {
-			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
-			}*/
+			for (mii = prodotto->tp.begin(); mii != prodotto->tp.end(); mii++ ) {
+			cout << "ID : " << mii->first << " nome : " << mii->second << endl;
+			}
 		}
 		
 		void test_prodotto() {
 			cout << "test prodotto " << endl;
 			TipoProdotto* tipoprod;
-			tipoprod->inserisciProdotto();
-			
-            tipoprod->stampa();
-			
+			tipoprod=tipoprod->inserisciProdotto();
+			tipoprod->stampa(tipoprod);
 		}
 		
 		
