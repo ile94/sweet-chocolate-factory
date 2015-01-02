@@ -11,7 +11,7 @@ class Cliente{
 	public:
 		Cliente();
 		//input
-		void inizializza_cliente(string _nome, string _cognome, string _nato_il, string _citta);
+		void inizializza_cliente();
 		void inserisciIdCliente(string cliente_id);
 		void inserisciMail(string _mail);
 		//output
