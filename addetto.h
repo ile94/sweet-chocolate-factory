@@ -22,7 +22,7 @@ class Addetto{
 		void inizializza_addetto(string _nome, string _cognome, string _nato_il, string _citta);
 		//output
 		bool login(string _username, string _password);
-		void inserisciCliente(Cliente c);
+		Cliente* inserisciCliente();
 		bool verificaMagazzino();
 		void inserisciOrdine(Cliente c, Ordine o);
 		void inviaOrdineProduzione(Ordine o);

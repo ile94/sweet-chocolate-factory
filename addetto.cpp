@@ -1,4 +1,5 @@
 #include "addetto.h"
+#include <fstream>
 
 Addetto::Addetto(){
 	username="user1";
@@ -13,8 +14,23 @@ bool Addetto::login(string _username, string _password){
 	return ((username==_username)&&(password==_password));
 }
 
-void Addetto::inserisciCliente(Cliente c){
-	map_cliente.insert(pair<string,Cliente>(c.get_id(),c));
+Cliente* Addetto::inserisciCliente(){
+	Cliente* cliente  = new Cliente();
+	string temp1, temp2; //si crea temporaneamente le variabili IDProdotto e Nome
+	                     //queste variabili vengono distrutte subito
+	cout << "Inserire ID cliente : ";
+		cin >> temp1;
+	cout << endl;
+	
+	cliente->inizializza_cliente();
+	
+	(this)->map_cliente.insert ( pair <string, Cliente> (temp1,*cliente));
+            	
+    ofstream outfile;
+    outfile.open("clienti.csv",ios::app);
+    outfile << temp1 <<";" <<  temp2 <<endl;
+    outfile.close();
+    return cliente; //ritorna un puntatore ad un Tipoprodotto
 }
 
 bool Addetto::verificaMagazzino(){
@@ -78,7 +94,7 @@ void start(){
 			}break;
 			case 2:{
 				test_prodotto();
-				/*
+				
 				ifstream file ( "prodotti.csv" );
     			ifstream is;
     			char linea[100];
@@ -92,7 +108,7 @@ void start(){
           			cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
     			}
     	
-    			is.close();*/
+    			is.close();
 			}break;
 		}
 		cout<<endl;
