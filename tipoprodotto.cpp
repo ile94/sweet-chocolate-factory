@@ -22,31 +22,30 @@
 		}
 		
 		void TipoProdotto::inserisciProdotto() {
-			TipoProdotto prodotto  = new TipoProdotto(string _IDProdotto, string _nome);
+			TipoProdotto* prodotto  = new TipoProdotto();
 			cout << "Inserire ID prodotto : ";
-			cin >> IDProdotto;
+			cin >> prodotto->IDProdotto;
 			cout << endl;
 			cout << "Inserire nome prodotto : ";
-			cin >> nome;
+			cin >> prodotto->nome;
 			cout << endl;
-			tp.insert ( pair <string, string> (IDProdotto, nome));
-			
+			tp.insert ( pair <string, string> (prodotto->IDProdotto, prodotto->nome));	
 		}
 		
 		void TipoProdotto::stampa() {
 			map <string, string >:: iterator mii;
-			for (mii = tp.begin(); mii != tp.end(); mii++ ) {
+			cout << "ciao" << endl;
+			/*for (mii = tp.begin(); mii != tp.end(); mii++ ) {
 			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
-			}
+			}*/
 		}
 		
 		void test_prodotto() {
 			cout << "test prodotto " << endl;
-			TipoProdotto tipoprod;
-			for (int i=0; i<5; i++) {
-				tipoprod.inserisciProdotto();
-            }
-            tipoprod.stampa();
+			TipoProdotto* tipoprod;
+			tipoprod->inserisciProdotto();
+			
+            tipoprod->stampa();
 			
 		}
 		
