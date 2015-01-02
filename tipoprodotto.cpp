@@ -4,6 +4,7 @@
 #include <fstream>
 
 
+
 		TipoProdotto::TipoProdotto() {
 			IDProdotto = " ";
 			nome = " ";
@@ -33,12 +34,13 @@
 			cin >> temp2;
 			cout << endl;
 			prodotto->tp.insert ( pair <string, string> (temp1, temp2));
-            return prodotto; //ritorna un puntatore ad un Tipoprodotto	
+            	
             
-            /*ofstream output_file ("prova.txt");
-            outfile.open("prova.txt",ios::out);
-            outfile << temp1<< temp2 <<endl;
-            outfile.close();*/
+            ofstream outfile;
+            outfile.open("prodotti.csv",ios::app);
+            outfile << temp1 <<";" <<  temp2 <<endl;
+            outfile.close();
+            return prodotto; //ritorna un puntatore ad un Tipoprodotto
 		}
 		
 		void TipoProdotto::stampa(TipoProdotto* prodotto) {
