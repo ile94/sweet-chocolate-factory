@@ -7,15 +7,15 @@
 #include "addetto.h"
 #include "cliente.h"
 #include "ordine.h"
+#include "tipoprodotto.h"
 
 class Addetto{
 	private:
 		Persona p;
 		string username;
 		string password;
-		map<int,Cliente> map_cliente;
-		map<int,Ordine> map_ordine;		//da verificare map di map
-		
+		map<string,Cliente> map_cliente;
+		map<string,Ordine> map_ordine;		//da verificare map di map
 	public:
 		Addetto();
 		//input
@@ -26,8 +26,12 @@ class Addetto{
 		bool verificaMagazzino();
 		void inserisciOrdine(Cliente c, Ordine o);
 		void inviaOrdineProduzione(Ordine o);
-		void inviaOrdineFornitore(Ordine o);		
+		void inviaOrdineFornitore(Ordine o);
+		void stampaRegistroClienti();		
 };
+
+//unico metodo da richiamare nel main - metodo che avvia il programma
+void start();
 
 void test_addetto();
 

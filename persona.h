@@ -25,6 +25,4 @@ class Persona{
 		string get_citta();
 };
 
-void test_persona();
-
 #endif

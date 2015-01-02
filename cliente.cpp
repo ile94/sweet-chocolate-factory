@@ -1,11 +1,11 @@
 #include "cliente.h"
 
 Cliente::Cliente(){
-	idCliente=0;
+	idCliente="nome_cognome";
 	mail="";
 }
 
-int Cliente::get_id(){
+string Cliente::get_id(){
 	return idCliente;
 }
 
@@ -13,7 +13,7 @@ string Cliente::get_mail(){
 	return mail;
 }
 
-void Cliente::inserisciIdCliente(int cliente_id){
+void Cliente::inserisciIdCliente(string cliente_id){
 	idCliente=cliente_id;
 }
 	
@@ -63,13 +63,13 @@ void test_cliente(){
 	}
 	
 	//test inserisci cliente
-	c.inserisciIdCliente(2);
-	if(c.get_id()==2){
-		cout<<"id_cliente: 2 = "<<c.get_id()<<" --> ok"<<endl; 
+	c.inserisciIdCliente("mario_rossi");
+	if(c.get_id().compare("mario_rossi")==0){
+		cout<<"id_cliente: mario_rossi = "<<c.get_id()<<" --> ok"<<endl; 
 	}else{
-		cout<<"id_cliente: 2 = "<<c.get_id()<<" --> -Errore-"<<endl; 
+		cout<<"id_cliente: mario_rossi = "<<c.get_id()<<" --> -Errore-"<<endl; 
 	}
-	
+
 	//test mail
 	c.inserisciMail("nome.cognome@gmail.com");
 	if(c.get_mail().compare("nome.cognome@gmail.com")==0){
