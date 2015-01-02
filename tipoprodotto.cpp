@@ -22,7 +22,7 @@
 		}
 		
 		void TipoProdotto::inserisciProdotto() {
-			
+			TipoProdotto prodotto  = new TipoProdotto(string _IDProdotto, string _nome);
 			cout << "Inserire ID prodotto : ";
 			cin >> IDProdotto;
 			cout << endl;
@@ -30,10 +30,7 @@
 			cin >> nome;
 			cout << endl;
 			tp.insert ( pair <string, string> (IDProdotto, nome));
-			/*map <string, string >:: iterator mii;
-			for (mii = tp.begin(); mii != tp.end(); mii++ ) {
-			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
-			}*/
+			
 		}
 		
 		void TipoProdotto::stampa() {
