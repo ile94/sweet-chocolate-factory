@@ -2,6 +2,7 @@
 #include <map>
 #include <string>
 
+
 		TipoProdotto::TipoProdotto() {
 			IDProdotto = " ";
 			nome = " ";
@@ -12,11 +13,11 @@
 			nome = _nome;
 		}
 		
-		string TipoProdotto::get_idprodotto() {
+		string TipoProdotto:: get_idprodotto() {
 			return IDProdotto;
 		}
 		
-		string TipoProdotto::get_nome() {
+		string TipoProdotto:: get_nome() {
 			return nome;
 		}
 		
@@ -28,19 +29,29 @@
 			cout << "Inserire nome prodotto : ";
 			cin >> nome;
 			cout << endl;
-			tp.insert (pair<string, string>(IDProdotto, nome));
+			tp.insert ( pair <string, string> (IDProdotto, nome));
+			map <string, string >:: iterator mii;
+			for (mii = tp.begin(); mii != tp.end(); mii++ ) {
+			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
+			}
+		}
+		
+		void TipoProdotto::stampa() {
+			map <string, string >:: iterator mii;
+			for (mii = tp.begin(); mii != tp.end(); mii++ ) {
+			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
+			}
 		}
 		
 		void test_prodotto() {
 			cout << "test prodotto " << endl;
+			TipoProdotto tipoprod;
 			for (int i=0; i<5; i++) {
-				TipoProdotto tipoprod;
+				
 				tipoprod.inserisciProdotto();
+				//tipoprod.get_prodotto();
 			}
-			map <string, string>::iterator mii;
-			for (mii = tp.begin(); mii != tp.end(); mii++ ) {
-			cout << "ID : " << mii->first << "nome : " << mii->second << endl;
-			}
+		//tipoprod.get_prodotto();
 			
 		}
 		
