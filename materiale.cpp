@@ -42,9 +42,9 @@ void Materiale::stampa(Materiale* mat) {
 			}
 		}
 
-void test_materiale(){
+/*void test_materiale(){
      cout << "TEST MATERIALE" << endl;
      Materiale* tipomat;
      tipomat=tipomat->inserisciTipoMateriale();
      tipomat->stampa(tipomat);
-}
+}*/

@@ -18,7 +18,7 @@ class Magazzino {
 		Magazzino();
 		Magazzino(int _IDP, int qd);
 		
-		void quantitàdisponibile();
+		//void quantitàdisponibile();
         void inserisciProdotto();
 		void rimuoviProdotto();
 		void inserisciQuantita();

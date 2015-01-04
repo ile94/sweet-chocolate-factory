@@ -24,6 +24,7 @@
         }
 		
 	   TipoProdotto* TipoProdotto::inserisciProdotto() {
+                     
 			TipoProdotto* prodotto  = new TipoProdotto();
 			string temp1, temp2; //si crea temporaneamente le variabili IDProdotto e Nome
 			                     //queste variabili vengono distrutte subito
@@ -50,11 +51,11 @@
 			}
 		}
 		
-		void test_prodotto() {
+		/*void test_prodotto() {
 			cout << "test prodotto " << endl;
 			TipoProdotto* tipoprod;
 			tipoprod=tipoprod->inserisciProdotto();
 			tipoprod->stampa(tipoprod);
-		}
+		}*/
 		
 		

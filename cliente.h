@@ -2,23 +2,24 @@
 #define __CLIENTE_H__
 
 #include "persona.h"
+#include <map>
 
 class Cliente{
 	private:
-		Persona p;
+		Persona* p;
 		string idCliente;
-		string mail;
+		map<string,Persona*> mci;
+		map<string, Persona*>::iterator pos;
+        
 	public:
 		Cliente();
-		//input
-		void inizializza_cliente();
-		void inserisciIdCliente(string cliente_id);
-		void inserisciMail(string _mail);
-		//output
-		Persona get_p();
+		Cliente(string _ID);
 		string get_id();
-		string get_mail();
-		void Ordine();	
+		Cliente* inserisci_cliente();	
+		bool trova_cliente(string nome_cognome);
+		void stampa(Cliente* cl); //stampa solo il cliente appena creato
+		void stampa_tutti_clienti();
+		string get_map();
 };
 
 void test_cliente();

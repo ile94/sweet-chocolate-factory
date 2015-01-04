@@ -14,15 +14,23 @@ class Persona{
 		string citta;
 	public:
 		Persona();
-		void inizializza(string _nome, string _cognome, string _nato_il, string _citta);
-		void inserisciNome(string _nome);
+		Persona(string _nome, string _cognome, string _nato_il, string _citta);
+		Persona* inserisci_persona();
+		void stampa(Persona* p);
 		string get_nome();
-		void inserisciCognome(string _cognome);
 		string get_cognome();
-		void inserisciData(string _data);			//array di int[8] da implementare
 		string get_data();
-		void inserisciCitta(string _citta);			//array di int[8] da implementare
 		string get_citta();
+		
+        /*void inserisciNome(string _nome);
+		void inserisciCognome(string _cognome);
+		
+		void inserisciData(string _data);			//array di int[8] da implementare
+		
+		void inserisciCitta(string _citta);			//array di int[8] da implementare
+		*/
 };
+
+void test_persona();
 
 #endif

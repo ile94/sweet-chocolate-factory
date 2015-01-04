@@ -8,19 +8,20 @@
 #include "cliente.h"
 #include "ordine.h"
 #include "tipoprodotto.h"
+#include "materiale.h"
+
+using namespace std;
 
 class Addetto{
 	private:
 		Persona p;
 		string username;
 		string password;
-		map<string,Cliente> map_cliente;
-		map<string,Ordine> map_ordine;		//da verificare map di map
+		//map<string,Cliente> map_cliente;
+		//map<string,Ordine> map_ordine;	//da verificare map di map
 	public:
 		Addetto();
-		//input
 		void inizializza_addetto(string _nome, string _cognome, string _nato_il, string _citta);
-		//output
 		bool login(string _username, string _password);
 		Cliente* inserisciCliente();
 		bool verificaMagazzino();

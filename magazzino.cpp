@@ -11,7 +11,7 @@ Magazzino::Magazzino(int _IDP, int qd) {
 	quantitaDisponibile = qd;	
 }
 
-void Magazzino::quantitàdisponibile(){
+/*void Magazzino::quantitàdisponibile(){
      ifstream file ( "prodotti.csv" );
     ifstream is;
     char linea[100];
@@ -27,4 +27,4 @@ void Magazzino::quantitàdisponibile(){
     }
     
     is.close(); 
-}
+}*/
