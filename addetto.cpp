@@ -125,10 +125,11 @@ void start(){
 	             system ("CLS");
             }
 			case 1:{
-                 cout<<endl;
+                 cout << endl;
+                 cout<< " ---- REGISTRA ORDINE ----" << endl;
                  cout<< "1) Visualizza lista prodotti" << endl;
 				 cout<< "2) Visualizza lista materiali" << endl;
-				 cout<< "3) Verifica cliente" << endl;
+				 cout<< "3) Visualizza lista clienti" << endl;
 				 cout<< "4) Torna la menu' principale" << endl;
 				 cin>>n;
 				switch(n){
@@ -170,24 +171,21 @@ void start(){
                                }break;
                                
                                case 3:{
-                                    //NON FUNZIONA!!
-                                    //Cliente* c=NULL; //problema: non punta a qualcosa!!
-                                    //c->Cliente();
-                                    string nome_cognome;
-                                    cout << "Inserire nome_cognome da ricercare : " << endl;
-                                    cin >> nome_cognome;
-                                    
-                                    if ((b.trova_cliente(nome_cognome))==true){
-                                       cout << "Cliente già esistente!" << endl;}
-                                       else{
-                                            cout << "Cliente da registrare!" << endl;
-                                            //b.inserisci_cliente();}
-                                    //c.trova_cliente(nome_cognome);
-                                    }
+                                    ifstream file ( "clienti.csv" );//apertura del file
+                                    ifstream is;
+                                    char linea[100];
+                                    is.open("clienti.csv", ios::in); 
     
-                                    
-                                                        
-                                    }break;
+                                    is.getline(linea, 100); //leggere la linea id intestazione
+                                    string value;
+                                    while ( file.good() )
+                                    {
+                                    getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                                    cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                                    }                                   
+                                    is.close(); 
+                                                                                            
+                                }break;
                                
                                case 4:{m=10;
                                system ("CLS");
@@ -236,6 +234,6 @@ void start(){
 
             }break;
             system ("CLS");
-		}		
+		}	
 	}while(m!=0);
 }

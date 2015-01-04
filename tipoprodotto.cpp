@@ -51,11 +51,11 @@
 			}
 		}
 		
-		/*void test_prodotto() {
+		void test_prodotto() {
 			cout << "test prodotto " << endl;
 			TipoProdotto* tipoprod;
 			tipoprod=tipoprod->inserisciProdotto();
 			tipoprod->stampa(tipoprod);
-		}*/
+		}
 		
 		

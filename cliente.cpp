@@ -2,13 +2,12 @@
 #include <fstream>
 #include <map>
 
-Cliente::Cliente(){
+Cliente::Cliente(): pe(){
     p = NULL;
 	idCliente="nome_cognome";
 }
 
-Cliente::Cliente(string _ID){
-    p=p->inserisci_persona();
+Cliente::Cliente(string _nome, string _cognome, string _nato_il, string _citta, string _ID): pe(_nome, _cognome, _nato_il, _citta) {
     idCliente = _ID;
 }
 
@@ -26,10 +25,10 @@ Cliente* Cliente::inserisci_cliente(){
 	Persona* pe;
 	cout << "Inserire ID cliente : ";
     cin >> temp;
-    pe= cl->p->inserisci_persona();
+    pe = cl->p->inserisci_persona();
 	//temp = cl->get_id();
     
-    cl->mci.insert ( pair <string, Persona*> (temp, pe));
+    cl->mci.insert( pair <string, Persona*> (temp, pe));
     	
      ofstream outfile;
      outfile.open("clienti.csv",ios::app);
@@ -48,22 +47,11 @@ void Cliente::stampa(Cliente* cl){
 			}
 }
 
-
-bool Cliente::trova_cliente(string nome_cognome){
-     cout << "ciao";
-     pos= mci.find(nome_cognome);
-     if(pos!=mci.end()) { 
-                        //cout << "Cliente già esistente!" << endl;
-                        return true;
-                        }else {//cout << "Cliente da registrare!" << endl; 
-                        return false;}      
-}
-
 void Cliente::stampa_tutti_clienti(){
      ifstream file ( "clienti.csv" );//apertura del file
      ifstream is;
      char linea[100];
-     is.open("materiali.csv", ios::in); 
+     is.open("clienti.csv", ios::in); 
     
     is.getline(linea, 100); //leggere la linea id intestazione
     string value;
@@ -72,27 +60,14 @@ void Cliente::stampa_tutti_clienti(){
     getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
     cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
     }                                   
-    is.close();}
-    
-string Cliente:: get_map(){
-       Cliente* cl;
-       cl->pos = cl->mci.begin();
-       return cl->pos->first;
-			}
-
-void test_cliente(){
-	cout<<"TEST CLIENTE"<<endl;
-	
-	Cliente* c; // si deve inizializzare in qualche modo
-	string temp;
-    
-	c->get_map();
-	//cout<< "nome DA CERCARE: ";
-	//cin>> temp;
-	//c->stampa(c);
-    //c->trova_cliente(temp);	
-    //if ((c->trova_cliente(temp))==true){cout << "Cliente già esistente!" << endl;}
-    //else{cout << "Cliente da registrare!" << endl; }
-    c->stampa_tutti_clienti();
+    is.close();
 }
+/*    
+void test_cliente(){
+	cout<<"TEST CLIENTE"<<endl;	
+	Cliente* c; // si deve inizializzare in qualche modo
+	c = c->inserisci_cliente();
+	c->stampa(c);
+    //c->stampa_tutti_clienti();
+}*/
 

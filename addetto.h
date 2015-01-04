@@ -1,3 +1,4 @@
+
 #ifndef __ADDETTO_H__
 #define __ADDETTO_H__
 
@@ -14,7 +15,7 @@ using namespace std;
 
 class Addetto{
 	private:
-		Persona p;
+		Persona* p;
 		string username;
 		string password;
 		//map<string,Cliente> map_cliente;

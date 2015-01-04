@@ -6,20 +6,19 @@
 
 class Cliente{
 	private:
+		Persona pe;
 		Persona* p;
 		string idCliente;
-		map<string,Persona*> mci;
-		map<string, Persona*>::iterator pos;
-        
+		map<string, Persona* > mci;
+		map<string, Persona* >:: iterator pos;       
 	public:
 		Cliente();
-		Cliente(string _ID);
+		Cliente(string _nome, string _cognome, string _nato_il, string _citta, string _ID);
+		Cliente(Cliente* _cl);
 		string get_id();
 		Cliente* inserisci_cliente();	
-		bool trova_cliente(string nome_cognome);
 		void stampa(Cliente* cl); //stampa solo il cliente appena creato
 		void stampa_tutti_clienti();
-		string get_map();
 };
 
 void test_cliente();

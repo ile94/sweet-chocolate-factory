@@ -20,8 +20,8 @@ int main(int argc, char *argv[])
 {
     //test_prodotto();
     //test_materiale();
-    //start();
-    test_cliente();
+    start();
+    //test_cliente();
     //test_persona();
     
     system("PAUSE");
