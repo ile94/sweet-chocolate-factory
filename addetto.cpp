@@ -38,10 +38,7 @@ bool Addetto::verificaMagazzino(){
 	
 }
 
- void Addetto::~TipoProdotto() {
-        cout << "Distruttore di TipoProdotto" << endl;
-        delete TipoProdotto;
-}
+
 
 /*void Addetto::inserisciOrdine(Cliente c, Ordine o){
 	map_ordine.insert(pair<string,Ordine>(c.get_id(),o));
