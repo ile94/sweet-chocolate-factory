@@ -32,15 +32,20 @@ bool Addetto::login(string _username, string _password){
     outfile << temp1 <<";" <<  temp2 <<endl;
     outfile.close();
     return cliente; //ritorna un puntatore ad un Tipoprodotto
-}
+}*/
 
 bool Addetto::verificaMagazzino(){
 	
 }
 
-void Addetto::inserisciOrdine(Cliente c, Ordine o){
-	map_ordine.insert(pair<string,Ordine>(c.get_id(),o));
+ void Addetto::~TipoProdotto() {
+        cout << "Distruttore di TipoProdotto" << endl;
+        delete TipoProdotto;
 }
+
+/*void Addetto::inserisciOrdine(Cliente c, Ordine o){
+	map_ordine.insert(pair<string,Ordine>(c.get_id(),o));
+}*/
 
 void Addetto::inviaOrdineProduzione(Ordine o){
 	
@@ -75,6 +80,7 @@ void start(){
 	int n=0;
 	int o=0;
 	int k=0;
+	int x=0;
 	cout<<"*** SWEET CHOCOLATE FACTORY ***"<<endl;
 	
 	while(m==0){
@@ -99,9 +105,8 @@ void start(){
 	cout<<"3) Verifica magazzino"<<endl;
 	cout<<"4) Registra ordini fornitori"<<endl;
 	cout<<"5) Esegui statistiche"<<endl;
-	cout<<"6) Lista prodotti"<<endl;
-	cout<<"7) Aggiungi prodotto"<<endl;
-	cout<<"8) Aggiungi materiale"<< endl;
+	cout<<"6) Aggiungi prodotto"<<endl;
+	cout<<"7) Aggiungi materiale"<< endl;
 	cout<<"0) Torna alla pagina precedente" << endl;
 	cout<<"Inserire valore: ";
 	cin>>m;
@@ -130,76 +135,92 @@ void start(){
                  cout<< "1) Visualizza lista prodotti" << endl;
 				 cout<< "2) Visualizza lista materiali" << endl;
 				 cout<< "3) Visualizza lista clienti" << endl;
-				 cout<< "4) Torna la menu' principale" << endl;
+				 cout<< "4) Inserisci nuovo cliente" << endl;
+				 cout<< "5) Torna al menu' principale" << endl;
 				 cin>>n;
 				switch(n){
-                          case 1:{
- 
-                                  ifstream file ( "prodotti.csv" );
-                                  ifstream is;
-                                  char linea[100];
-                                  is.open("prodotti.csv", ios::in); 
-    
-                                  is.getline(linea, 100); //leggere la linea id intestazione
-                                  string value;
-                                  while ( file.good() )
-                                  {
-                                  getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
-                                  cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
-                                  }
-    
-                                  is.close();
+                    case 1:{ 
+                        ifstream file ( "prodotti.csv" );
+                        ifstream is;
+                        char linea[100];
+                        is.open("prodotti.csv", ios::in);     
+                        is.getline(linea, 100); //leggere la linea id intestazione
+                        string value;
+                        while ( file.good() )
+                        {
+                        getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                        cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                        }    
+                        is.close();
                                                                     
-                               }break;
-                               system ("CLS");
+                        }break;
+                        system ("CLS");
                                
-                          case 2:{
-                               ifstream file ( "materiali.csv" );
-                               ifstream is;
-                               char linea[100];
-                               is.open("materiali.csv", ios::in); 
-    
-                               is.getline(linea, 100); //leggere la linea id intestazione
-                               string value;
-                               while ( file.good() )
-                               {
+                    case 2:{
+                        ifstream file ( "materiali.csv" );
+                        ifstream is;
+                        char linea[100];
+                        is.open("materiali.csv", ios::in);    
+                        is.getline(linea, 100); //leggere la linea id intestazione
+                        string value;
+                        while ( file.good()){
                                getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
                                cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
-                               }
-    
-                               is.close();
-                               }break;
+                        }    
+                        is.close();
+                        
+                    }break;
                                
-                               case 3:{
-                                    ifstream file ( "clienti.csv" );//apertura del file
-                                    ifstream is;
-                                    char linea[100];
-                                    is.open("clienti.csv", ios::in); 
-    
-                                    is.getline(linea, 100); //leggere la linea id intestazione
-                                    string value;
-                                    while ( file.good() )
-                                    {
-                                    getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
-                                    cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
-                                    }                                   
-                                    is.close(); 
+                    case 3:{
+                        ifstream file ( "clienti.csv" );//apertura del file
+                        ifstream is;
+                        char linea[100];
+                        is.open("clienti.csv", ios::in);     
+                        is.getline(linea, 100); //leggere la linea id intestazione
+                        string value;
+                        while ( file.good() ){
+                            getline ( file, value, ',' ); // read a string until next comma: http://www.cplusplus.com/reference/string/getline/
+                            cout << string( value, 1, value.length()-2 ); // display value removing the first and the last character from it
+                        }                                   
+                        is.close(); 
                                                                                             
-                                }break;
+                    }break;
+                                
+                    case 4: {
+                        cout << "1) Inserisci nuovo cliente" << endl;
+                        cout << "2) Ritorna al menu' predecedente" << endl;
+                        cin >> k;
+                        switch(k){
+                          case 1:{
+                               Cliente* cl;
+			                   cl = cl->inserisci_cliente();
+			                   cl->stampa(cl);
+			                   
+                          }break;
+                         case 2:{
+                              m=10;
+                              
+                         }break;
+                         system ("CLS");
+                        
+                    
+                    }
                                
-                               case 4:{m=10;
-                               system ("CLS");
-                               }break;
+                    case 5:{
+                        m=10;
+                        system ("CLS");
+                    }break;
 				
                 }
 				
 			}break;
+			
 			case 2:{
 
 
 			}break;
 			
-			case 7:{
+			case 6:{
                  cout << "1) Inserisci nuovo prodotto" << endl;
                  cout << "2) Ritorna al menu' predecedente" << endl;
                  cin >> o;
@@ -217,23 +238,28 @@ void start(){
                   }
             }break;
             
-            case 8:{
+            case 7:{
                  cout << "1) Inserisci nuovo materiale" << endl;
                  cout << "2) Ritorna al menu' predecedente" << endl;
-                 cin >> o;
-                 switch(o){
-                          case 1:{
-                               Materiale* tipomat;
-                               tipomat=tipomat->inserisciTipoMateriale();
-                               tipomat->stampa(tipomat);
-                               }break;
-                         case 2:{
-                              m=10;
-                         }break;
-                         }
+                 cin >> x;
+                 switch(x){
+                     case 1:{
+                        Materiale* tipomat;
+                        tipomat=tipomat->inserisciTipoMateriale();
+                        tipomat->stampa(tipomat);
+                     }break;
+                     
+                     case 2:{
+                         m=10;
+                     }break;
+                 }
 
             }break;
             system ("CLS");
 		}	
-	}while(m!=0);
+	}
 }
+while(m!=0);
+}
+
+

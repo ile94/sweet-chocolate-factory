@@ -29,7 +29,7 @@ class Addetto{
 		void inserisciOrdine(Cliente c, Ordine o);
 		void inviaOrdineProduzione(Ordine o);
 		void inviaOrdineFornitore(Ordine o);
-		void stampaRegistroClienti();		
+		void stampaRegistroClienti();	
 };
 
 //unico metodo da richiamare nel main - metodo che avvia il programma
